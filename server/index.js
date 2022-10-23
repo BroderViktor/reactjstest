@@ -13,7 +13,7 @@ const app = express();
 app.use(express.static(path.resolve(__dirname, '../client/build')))
 
 app.get("/api", (req, res) => {
-    res.json({message : "effe"});
+    res.json({message : "Hei, fra server!"});
 })
 
 app.get("*", (req, res) => {
