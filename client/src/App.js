@@ -6,8 +6,21 @@ function App() {
 
   const [data, setData] = React.useState(null);
 
-  /*React.useEffect(() => {
-    fetch("https://tt02.altinn.no/api/authentication/authenticatewithpassword", {
+  React.useEffect(() => {
+    fetch("https://tt02.altinn.no/api/organizations/911007118", {
+      method: "GET",
+      headers: ({
+        //'Authorization': '7A2BA1FE-384E-4793-BD77-58561B15D766', 
+        'Host': 'tt02.altinn.no',
+        'Content-Type': 'application/hal+json',
+        'Accept': 'application/hal+json',
+        'ApiKey': '7A2BA1FE-384E-4793-BD77-58561B15D766',
+      }),
+
+    }).then((res) => res.json()).then((data) => console.log(data))
+   });
+
+    /*fetch("https://tt02.altinn.no/api/authentication/authenticatewithpassword", {
       method: "POST",
       headers: ({
         //'Authorization': '7A2BA1FE-384E-4793-BD77-58561B15D766', 
@@ -22,7 +35,7 @@ function App() {
       })
     }).then((res) => console.log(res)).then((data) => console.log(data))
   });*/
-  React.useEffect(() => {
+  /*React.useEffect(() => {
     fetch("https://tt02.altinn.no/api/metadata?language=1044", {
       method: "GET",
       headers: ({
@@ -33,7 +46,7 @@ function App() {
         //'ApiKey': '7A2BA1FE-384E-4793-BD77-58561B15D766',
       }),
     }).then((res) => console.log(res.json()))
-  });
+  });*/
 
   return (
     <div className="App">
